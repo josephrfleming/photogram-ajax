@@ -1,0 +1,10 @@
+// app/views/comments/create.js.erb
+
+// Append the newly created comment (rendered using a partial) to the comments list.
+$("#comments-list").append("<%= j render @comment %>");
+
+// Optionally, clear the comment form.
+$("#new_comment")[0].reset();
+
+// Optionally, add some visual flair:
+$("#<%= dom_id(@comment) %>").hide().fadeIn();

@@ -6,16 +6,21 @@
     <div class="flex-grow-1 ms-3">
       <div class="d-flex align-items-center justify-content-between">
         <h5 class="mt-0">
-          <%= link_to comment.author.username, user_path(comment.author.username), class: "text-dark link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover", data: { turbo: false } %>
+          <%= link_to comment.author.username,
+                      user_path(comment.author.username),
+                      class: "text-dark link-underline-dark link-underline-opacity-0 link-underline-opacity-100-hover",
+                      data: { turbo: false } %>
         </h5>
-
         <div>
           <% if comment.author == current_user %>
-            <%= link_to edit_comment_path(comment), class: "btn btn-link btn-sm text-muted" do %>
+            <%= link_to edit_comment_path(comment),
+                        class: "btn btn-link btn-sm text-muted" do %>
               <i class="fas fa-edit fa-fw"></i>
             <% end %>
-
-            <%= button_to comment, method: :delete, class: "btn btn-link btn-sm text-muted", form_class: "btn btn-sm btn-link" do %>
+            <%= button_to comment,
+                          method: :delete,
+                          class: "btn btn-link btn-sm text-muted",
+                          form_class: "btn btn-sm btn-link" do %>
               <i class="fas fa-trash fa-fw"></i>
             <% end %>
           <% end %>

@@ -1,0 +1,10 @@
+// app/views/comments/destroy.js.erb
+
+// 1) Find the comment’s container div by ID
+$("#comment_<%= @comment.id %>").fadeOut(function() {
+  // 2) Optionally remove it from the DOM entirely
+  $(this).remove();
+});
+
+// Alternatively, you can just remove immediately:
+// $("#comment_<%= @comment.id %>").remove();
